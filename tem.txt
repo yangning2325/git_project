@@ -1,9 +1,0 @@
-this is my first git project 
-now,I can do how to learn git?
-think you ok yes
-<<<<<<< HEAD
-creat a new branch is quick
-=======
-creat a new branch is quick
-in feat
->>>>>>> feat
