@@ -1,3 +1,4 @@
 this is my first git project 
 now,I can do how to learn git?
 think you ok yes
+creat a new branch is quick
