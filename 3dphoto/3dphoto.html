@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d</title>
+    <style>
+        html{
+            /* 设置视距，即眼睛与屏幕里直观距离 */
+            perspective: 1200px;
+            background-image: url(./photo/fl.jpg);
+            background-size: cover;
+        }
+        .photo{
+
+            /* 设置容器的宽高 */
+            width: 200px;
+            height: 200px;
+            /* 居中显示 */
+            margin: 150px auto;
+            /* 开启相对定位 */
+            position: relative;
+            right: -350px;
+            /* 3d变形 */
+            transform-style: preserve-3d;
+            /* 旋转一定的角度 */
+            transform: rotateX(45deg)  rotateZ(45deg);
+            /* 开启动画 */
+            animation:run 6s  infinite linear alternate;
+            
+        }
+        /* 定义动画状态 */
+        @keyframes run{
+            0%{
+                transform:rotateY(45deg) rotateZ(45deg);
+            }
+            100%{
+                transform:rotateY(360deg) rotateZ(45deg);
+            }
+        }
+
+        /* 鼠标移动到图片上时暂停 */
+        .photo:hover{
+            animation-play-state: paused;
+        }
+        .photo div{
+            /* 设置每张图片容器的宽高 */
+            width: 360px;
+            height: 360px;
+            /* 表示图片撑满盛放图片的容器 */
+            background-size: cover;
+            /* 开启绝对定位脱离文档流 */
+            position: absolute;
+            /* 设置图片透明度 */
+            opacity: .8;
+            
+        }
+        /* 替换图片只需替换下面的图片地址 */
+        .p1{
+            /* 背景图片的地址 */
+            background-image: url(./photo/fl1.jpg);
+            /* 表示沿y轴旋转90度，沿z轴平移180个像素，下同 */
+            transform:rotateY(90deg) translateZ(180px) ;
+        }
+        .p2{
+            background-image: url(./photo/fl2.jpg);
+            transform:rotateY(-90deg) translateZ(180px) ;
+        }
+        .p3{
+            background-image: url(./photo/fl3.jpg);
+            transform:rotateX(90deg) translateZ(180px);
+        }
+        .p4{
+            background-image: url(./photo/fl4.jpg);
+            transform:rotateX(-90deg) translateZ(180px);
+        }
+        .p5{
+
+            background-image: url(./photo/fl5.jpg);
+            transform:rotateY(180deg) translateZ(180px);
+        }
+        .p6{
+            transform:rotateY(0deg) translateZ(180px);
+            background-image: url(./photo/fl6.jpg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="photo">
+        <!-- 定义六张图片容器 -->
+        <div class="p1"></div>
+        <div class="p2"></div>
+        <div class="p3"></div>
+        <div class="p4"></div>
+        <div class="p5"></div>
+        <div class="p6"></div> 
+        </div>
+</body>
+</html>
